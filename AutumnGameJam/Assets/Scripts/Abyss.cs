@@ -12,5 +12,9 @@ public class Abyss : MonoBehaviour
             Time.timeScale = 0;
             Debug.LogError("Game Over!");
         }
+        else
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }
