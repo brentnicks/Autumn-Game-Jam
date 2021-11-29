@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject player;
     public float speed;
     public float jumpHeight;
+
     [HideInInspector] public bool canJump = true;
 
     void Update()
@@ -15,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (canJump == true && Input.GetKeyDown(KeyCode.W))
         {
-            player.GetComponent<Rigidbody2D>().velocity = new Vector2(player.GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
+            player.GetComponent<Rigidbody2D>().AddForce(new Vector2 (0, jumpHeight));
             canJump = false;
         }
     }
