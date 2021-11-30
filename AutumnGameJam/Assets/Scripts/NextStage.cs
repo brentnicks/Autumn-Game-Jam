@@ -8,7 +8,7 @@ public class NextStage : MonoBehaviour
     public GameObject player;
     public GameObject gm;
     public GameObject[] Stages;
-    public Camera camera;
+    public Camera mainCamera;
     [HideInInspector] public int stageNumber = 1;
     public GameObject stageNumberText;
     private void OnTriggerEnter2D(Collider2D collision)
@@ -17,7 +17,7 @@ public class NextStage : MonoBehaviour
         {
             gm.transform.position = new Vector3(0, gameObject.transform.position.y + 20.5f, 0);
             Instantiate(Stages[Random.Range(0,Stages.Length-1)], gm.transform.position, Quaternion.identity);
-            camera.transform.position = new Vector3(0, camera.transform.position.y + 20.5f, -20);
+            mainCamera.transform.position = new Vector3(0, mainCamera.transform.position.y + 20.5f, -20);
             ++stageNumber;
             stageNumberText.GetComponent<Text>().text = stageNumber.ToString();
 

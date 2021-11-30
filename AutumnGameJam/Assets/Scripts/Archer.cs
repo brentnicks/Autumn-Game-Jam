@@ -5,6 +5,7 @@ using UnityEngine;
 public class Archer : MonoBehaviour
 {
     public GameObject arrow;
+    public GameObject spawnPoint;
     public float attackRate;
     private float timer;
 
@@ -17,7 +18,7 @@ public class Archer : MonoBehaviour
     {
         if (timer <= 0)
         {
-            Instantiate(arrow, transform.position, transform.rotation);
+            Instantiate(arrow, spawnPoint.transform.position, transform.rotation);
             timer = attackRate;
         }
         else timer -= Time.deltaTime;
