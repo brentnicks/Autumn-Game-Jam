@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
             GetComponent<PlayerMovement>().enabled = false;
             GetComponent<PlayerAttack>().enabled = false;
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
+            GetComponent<Animator>().SetFloat("Speed", 0);
             GetComponent<Animator>().SetBool("Jump", false);
             StartCoroutine(WaitAndStop());
         }

@@ -19,7 +19,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (timer <= 0 && Input.GetButtonDown("Fire1"))
         {
-            Collider2D[] hitResults = Physics2D.OverlapBoxAll(AttackPosition.position, new Vector3 (1.25f,1.8f,0), 0, LayerMask.GetMask("Enemy"));
+            Collider2D[] hitResults = Physics2D.OverlapBoxAll(AttackPosition.position, new Vector3 (1.55f,1.8f,0), 0, LayerMask.GetMask("Enemy"));
             foreach (Collider2D collider in hitResults)
             {
                 Debug.Log(collider.gameObject);
@@ -36,6 +36,6 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawWireCube(AttackPosition.position, new Vector3(1.25f,1.8f,0));
+        Gizmos.DrawWireCube(AttackPosition.position, new Vector3(1.55f,1.8f,0));
     }
 }
