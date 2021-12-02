@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2470053592272357441}
   - component: {fileID: -9043969918753077257}
   - component: {fileID: 1282781554}
+  - component: {fileID: 2368149205197482330}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -98,7 +99,8 @@ MonoBehaviour:
   player: {fileID: 2470053592272357471}
   speed: 10
   jumpHeight: 1200
-  canJump: 1
+  animator: {fileID: 1282781554}
+  grounded: 0
 --- !u!212 &-9043969918753077257
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -169,6 +171,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2368149205197482330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2470053592272357471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb51e8e7dc61f1c459dc5010b5d8ccaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1282781554}
+  attackCD: 2
+  attackRadius: 2
 --- !u!1 &2470053592761818694
 GameObject:
   m_ObjectHideFlags: 0
