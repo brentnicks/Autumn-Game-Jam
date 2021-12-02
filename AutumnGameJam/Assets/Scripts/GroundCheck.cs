@@ -10,7 +10,15 @@ public class GroundCheck : MonoBehaviour
     {
         if (collision.gameObject.layer == 3)
         {
-            Player.GetComponent<PlayerMovement>().canJump = true;
+            Player.GetComponent<PlayerMovement>().grounded = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 3)
+        {
+            Player.GetComponent<PlayerMovement>().grounded = false;
         }
     }
 }
