@@ -17,8 +17,7 @@ public class Arrow : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Time.timeScale = 0;
-            Debug.Log("Dead!");
+            collision.GetComponent<PlayerHealth>().TakeDamaage();
             Destroy(gameObject);
         }
     }

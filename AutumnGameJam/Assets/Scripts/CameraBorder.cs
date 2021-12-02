@@ -8,9 +8,11 @@ public class CameraBorder : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            Time.timeScale = 0;
-            Debug.LogError("Game Over!");
+            foreach (GameObject Hearts in collision.GetComponent<PlayerHealth>().hearts.ToArray())
+            {
+                collision.GetComponent<PlayerHealth>().TakeDamaage();
+            }
         }
-        Destroy(collision.gameObject);
+
     }
 }

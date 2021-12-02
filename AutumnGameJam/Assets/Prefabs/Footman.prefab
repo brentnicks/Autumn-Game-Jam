@@ -70,6 +70,7 @@ GameObject:
   - component: {fileID: 4822203366956642054}
   - component: {fileID: 1242636211658531583}
   - component: {fileID: 4614681590544725938}
+  - component: {fileID: 1933838965}
   m_Layer: 8
   m_Name: Footman
   m_TagString: Untagged
@@ -154,6 +155,7 @@ MonoBehaviour:
   groundDetection: {fileID: 5739363639845337382}
   speed: 5
   waitTime: 2
+  animator: {fileID: 1933838965}
 --- !u!212 &4614681590544725938
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -205,3 +207,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1933838965
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7770338227309715503}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6df5fda4aae7ffe418e4d7909f14f7d1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
