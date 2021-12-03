@@ -10,6 +10,7 @@ public class NextStage : MonoBehaviour
 
     public GameObject player;
     public GameObject gm;
+    public GameObject instantiatePosition;
     public GameObject[] Stages;
     public Camera mainCamera;
     private Vector3 cameraTargetPosition;
@@ -36,7 +37,7 @@ public class NextStage : MonoBehaviour
         {
             //Change camera target position
             gm.transform.position = new Vector3(0, gameObject.transform.position.y + 20.5f, 0);
-            Instantiate(Stages[Random.Range(0,Stages.Length-1)], gm.transform.position, Quaternion.identity);
+            Instantiate(Stages[Random.Range(0,Stages.Length-1)], instantiatePosition.transform.position, Quaternion.identity);
             cameraTargetPosition = new Vector3(0, mainCamera.transform.position.y + 20.5f, -20);
 
             ++stageNumber;
