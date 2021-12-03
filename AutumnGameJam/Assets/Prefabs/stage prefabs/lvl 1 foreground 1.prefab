@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3189245053598851563}
   - component: {fileID: 4122888907489805583}
   m_Layer: 0
-  m_Name: lvl 1 foreground
+  m_Name: lvl 1 foreground 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
