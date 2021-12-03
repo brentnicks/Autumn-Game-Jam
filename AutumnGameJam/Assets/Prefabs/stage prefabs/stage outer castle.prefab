@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3688645762478623029}
   - component: {fileID: 8976412545621307675}
   - component: {fileID: 1786779156446029851}
+  - component: {fileID: 1373874926497854601}
+  - component: {fileID: 5692507816238556813}
   m_Layer: 3
   m_Name: stage outer castle
   m_TagString: Untagged
@@ -1031,7 +1033,118 @@ TilemapCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!50 &1373874926497854601
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8777832439626924084}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!66 &5692507816238556813
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8777832439626924084}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths:
+  - m_Collider: {fileID: 1786779156446029851}
+    m_ColliderPaths:
+    - - X: 90000000
+        Y: 80000000
+      - X: -10000000
+        Y: 80000000
+      - X: -10000000
+        Y: 70000000
+      - X: 70000000
+        Y: 70000000
+      - X: 70000000
+        Y: 68125000
+      - X: 78125000
+        Y: 60000000
+      - X: 80000000
+        Y: 60000000
+      - X: 80000000
+        Y: -110000000
+      - X: -10000000
+        Y: -110000000
+      - X: -10000000
+        Y: -120000000
+      - X: 90000000
+        Y: -120000000
+    - - X: -70000000
+        Y: -110000000
+      - X: -160000000
+        Y: -110000000
+      - X: -160000000
+        Y: 60000000
+      - X: -158124992
+        Y: 60000000
+      - X: -150000000
+        Y: 68125000
+      - X: -150000000
+        Y: 70000000
+      - X: -70000000
+        Y: 70000000
+      - X: -70000000
+        Y: 80000000
+      - X: -170000000
+        Y: 80000000
+      - X: -170000000
+        Y: -120000000
+      - X: -70000000
+        Y: -120000000
+  m_CompositePaths:
+    m_Paths:
+    - - {x: 8.99997, y: -12}
+      - {x: 8.99997, y: 8}
+      - {x: -1, y: 7.9999704}
+      - {x: -0.99997073, y: 7}
+      - {x: 7, y: 6.9999704}
+      - {x: 7.000008, y: 6.812493}
+      - {x: 7.8125105, y: 6}
+      - {x: 8, y: 5.9999704}
+      - {x: 7.9999704, y: -11}
+      - {x: -1, y: -11.00003}
+      - {x: -0.99997073, y: -12}
+    - - {x: -7.0000296, y: -12}
+      - {x: -7.0000296, y: -11}
+      - {x: -16, y: -10.99997}
+      - {x: -15.999971, y: 6}
+      - {x: -15.812491, y: 6.0000076}
+      - {x: -15, y: 6.8125105}
+      - {x: -14.999971, y: 7}
+      - {x: -7, y: 7.0000296}
+      - {x: -7.0000296, y: 8}
+      - {x: -17, y: 7.9999704}
+      - {x: -16.999971, y: -12}
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005
