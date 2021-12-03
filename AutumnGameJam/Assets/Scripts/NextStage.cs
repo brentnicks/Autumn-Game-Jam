@@ -36,6 +36,8 @@ public class NextStage : MonoBehaviour
         if(collision.gameObject.Equals(player))
         {
             Time.timeScale = 0;
+            player.GetComponent<PlayerMovement>().enabled = false;
+            player.GetComponent<PlayerAttack>().enabled = false;
             //Change camera target position
             gm.transform.position = new Vector3(0, gameObject.transform.position.y + 23f, 0);
             //Instantiate(Stages[Random.Range(0,Stages.Length-1)], instantiatePosition.transform.position, Quaternion.identity);
@@ -90,6 +92,8 @@ public class NextStage : MonoBehaviour
         Instantiate(Stages[option], instantiatePosition.transform.position, transform.rotation);
         ChooseUI.SetActive(false);
         Time.timeScale = 1;
+        player.GetComponent<PlayerMovement>().enabled = true;
+        player.GetComponent<PlayerAttack>().enabled = true;
     }
 
 }

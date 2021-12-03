@@ -23,7 +23,11 @@ public class PlayerAttack : MonoBehaviour
             foreach (Collider2D collider in hitResults)
             {
                 Debug.Log(collider.gameObject);
-                Destroy(collider.gameObject);
+                if (collider.gameObject.name == "Boss")
+                {
+                    collider.gameObject.GetComponent<Boss>().TakeDamage();
+                }
+                else Destroy(collider.gameObject);
             }
             //if (hitResults.Length > 0)
             timer = attackCD;
