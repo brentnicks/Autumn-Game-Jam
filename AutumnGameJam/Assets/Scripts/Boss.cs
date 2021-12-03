@@ -9,12 +9,26 @@ public class Boss : MonoBehaviour
     public float timeBetweenAttacks;
     private int health = 3;
     GameObject player;
+    bool isDead = false;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject.layer == 6)
         {
-        player = collision.gameObject;
+            player = collision.gameObject;
+            StartCoroutine(RangedAttack());
+            Debug.Log("enter");
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 6)
+        {
+            player = collision.gameObject;
+            StopAllCoroutines();
+            Debug.Log("exit");
         }
     }
 
@@ -23,13 +37,29 @@ public class Boss : MonoBehaviour
         --health;
         if (health <= 0)
         {
-            Destroy(gameObject);
+            StopAllCoroutines();
+            animator.Play("Boss_Die");
+            isDead = true;
         }
     }
 
     IEnumerator RangedAttack()
     {
-        yield return new WaitForSeconds(timeBetweenAttacks);
-        Instantiate(projectile, transform.position, Quaternion.Euler(0f,0f,Vector3.Angle(player.transform.position, transform.up)));
+        while (isDead == false)
+        {
+            yield return new WaitForSeconds(timeBetweenAttacks);
+            if (player.transform.position.x > transform.position.x)
+            {
+                transform.parent.rotation *= Quaternion.Euler(0, 0, 0);
+                Debug.Log("right");
+            }
+            else
+            {
+                transform.parent.rotation *= Quaternion.Euler(0, 180, 0);
+                Debug.Log("left");
+            }
+            animator.Play("Boss_Attack");
+            Instantiate(projectile, transform.position, transform.rotation);/*Quaternion.Euler(0f,0f,Vector3.Angle(player.transform.position, transform.right))*/
+        }
     }
 }

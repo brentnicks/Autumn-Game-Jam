@@ -25,7 +25,8 @@ public class PlayerAttack : MonoBehaviour
                 Debug.Log(collider.gameObject);
                 if (collider.gameObject.name == "Boss")
                 {
-                    collider.gameObject.GetComponent<Boss>().TakeDamage();
+                    //Debug.Log("hit boss");
+                    collider.gameObject.GetComponentInChildren<Boss>().TakeDamage();
                 }
                 else Destroy(collider.gameObject);
             }

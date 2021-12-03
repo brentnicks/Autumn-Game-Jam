@@ -18,6 +18,7 @@ public class FootmanAttack : MonoBehaviour
         if (collision.gameObject.layer == 6 && canAttack)
         {
             canAttack = false;
+            Footman.GetComponent<Footman>().moving = false;
             StartCoroutine(Footman.GetComponent<Footman>().PauseAndHit());
             StartCoroutine(Delay());
         }

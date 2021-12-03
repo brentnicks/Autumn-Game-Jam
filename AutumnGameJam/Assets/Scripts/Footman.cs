@@ -10,18 +10,18 @@ public class Footman : MonoBehaviour
     public float waitTime;
     public Animator animator;
     Rigidbody2D rb;
+    [HideInInspector] public bool moving = true;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 3)
+        if (collision.gameObject.layer == 3 && moving == true)
         {
             rb.velocity = new Vector3(speed * transform.right.x, rb.velocity.y, 0);
             animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
-
         }
     }
 
@@ -29,6 +29,7 @@ public class Footman : MonoBehaviour
     {
         if (collision.gameObject.layer == 3)
         {
+            moving = false;
             StopAllCoroutines();
             StartCoroutine(Patrol(waitTime, speed));
         }
@@ -40,6 +41,7 @@ public class Footman : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
         yield return new WaitForSeconds(waitTime);
         gameObject.transform.rotation *= Quaternion.Euler(0, 180, 0);
+        moving = true;
         //GetComponent<Rigidbody2D>().velocity = new Vector3(-speed, GetComponent<Rigidbody2D>().velocity.y, 0);
     }
 

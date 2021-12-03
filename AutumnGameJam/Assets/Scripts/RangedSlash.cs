@@ -7,11 +7,16 @@ public class RangedSlash : MonoBehaviour
     public Rigidbody2D rb;
     public float speed;
     GameObject player;
+    [HideInInspector] public float angle;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
-        rb.velocity = Quaternion.Euler(0f, 0f, Vector3.Angle(player.transform.position, transform.up)) * new Vector2(speed, 0);
+        Vector2 direction = player.transform.position - transform.position;
+        direction = player.transform.InverseTransformDirection(direction);//new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y);
+        angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        rb.velocity = direction.normalized * speed;
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
         Destroy(gameObject, 5f);
     }
 
