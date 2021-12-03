@@ -25,7 +25,7 @@ public class NextStage : MonoBehaviour
     int option2;
     int option3;
 
-    List<int> usedStages;
+    List<int> usedStages = new List<int>();
 
     private void Start()
     {
@@ -35,10 +35,11 @@ public class NextStage : MonoBehaviour
     {
         if(collision.gameObject.Equals(player))
         {
+            Time.timeScale = 0;
             //Change camera target position
-            gm.transform.position = new Vector3(0, gameObject.transform.position.y + 20.5f, 0);
-            Instantiate(Stages[Random.Range(0,Stages.Length-1)], instantiatePosition.transform.position, Quaternion.identity);
-            cameraTargetPosition = new Vector3(0, mainCamera.transform.position.y + 20.5f, -20);
+            gm.transform.position = new Vector3(0, gameObject.transform.position.y + 23f, 0);
+            //Instantiate(Stages[Random.Range(0,Stages.Length-1)], instantiatePosition.transform.position, Quaternion.identity);
+            cameraTargetPosition = new Vector3(0, mainCamera.transform.position.y + 23f, -20);
 
             ++stageNumber;
             stageNumberText.GetComponent<Text>().text = stageNumber.ToString();
@@ -67,19 +68,28 @@ public class NextStage : MonoBehaviour
     {
         Debug.Log("Left");
         usedStages.Add(option1);
+        SpawnNextStage(option1);
     }
 
     public void MiddleButtonPressed()
     {
         Debug.Log("Middle");
         usedStages.Add(option2);
+        SpawnNextStage(option2);
     }
 
     public void RightButtonPressed()
     {
         Debug.Log("Right");
         usedStages.Add(option3);
+        SpawnNextStage(option3);
     }
 
+    public void SpawnNextStage(int option)
+    {
+        Instantiate(Stages[option], instantiatePosition.transform.position, transform.rotation);
+        ChooseUI.SetActive(false);
+        Time.timeScale = 1;
+    }
 
 }
