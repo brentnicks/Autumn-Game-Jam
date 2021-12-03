@@ -12,6 +12,7 @@ public class NextStage : MonoBehaviour
     public GameObject gm;
     public GameObject instantiatePosition;
     public GameObject[] Stages;
+    public GameObject[] StagesImages;
     public Camera mainCamera;
     private Vector3 cameraTargetPosition;
     [HideInInspector] public int stageNumber = 1;
@@ -19,11 +20,9 @@ public class NextStage : MonoBehaviour
     
     public GameObject button1;
     public GameObject button2;
-    public GameObject button3;
 
     int option1;
     int option2;
-    int option3;
 
     List<int> usedStages = new List<int>();
 
@@ -33,15 +32,15 @@ public class NextStage : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.Equals(player))
+        if(collision.gameObject.Equals(player) && stageNumber < 4)
         {
             Time.timeScale = 0;
             player.GetComponent<PlayerMovement>().enabled = false;
             player.GetComponent<PlayerAttack>().enabled = false;
             //Change camera target position
-            gm.transform.position = new Vector3(0, gameObject.transform.position.y + 23f, 0);
+            gm.transform.position = new Vector3(gm.transform.position.x, gameObject.transform.position.y + 21.5f, 0);
             //Instantiate(Stages[Random.Range(0,Stages.Length-1)], instantiatePosition.transform.position, Quaternion.identity);
-            cameraTargetPosition = new Vector3(0, mainCamera.transform.position.y + 23f, -20);
+            cameraTargetPosition = new Vector3(gm.transform.position.x, mainCamera.transform.position.y + 21.5f, -20);
 
             ++stageNumber;
             stageNumberText.GetComponent<Text>().text = stageNumber.ToString();
@@ -51,12 +50,9 @@ public class NextStage : MonoBehaviour
             while (usedStages.Contains(option1)) option1 = Random.Range(0, Stages.Length);
             option2 = Random.Range(0, Stages.Length);
             while (option2 == option1 || usedStages.Contains(option2)) option2 = Random.Range(0, Stages.Length);
-            option3 = Random.Range(0, Stages.Length);
-            while (option3 == option1 || option3 == option2 || usedStages.Contains(option3)) option3 = Random.Range(0, Stages.Length);
             //Debug.Log(option1 + " " + option2 + " " + option3);
             button1.GetComponentInChildren<TextMeshProUGUI>().text = option1.ToString();
             button2.GetComponentInChildren<TextMeshProUGUI>().text = option2.ToString();
-            button3.GetComponentInChildren<TextMeshProUGUI>().text = option3.ToString();
             ChooseUI.SetActive(true);
         }
     }
@@ -78,13 +74,6 @@ public class NextStage : MonoBehaviour
         Debug.Log("Middle");
         usedStages.Add(option2);
         SpawnNextStage(option2);
-    }
-
-    public void RightButtonPressed()
-    {
-        Debug.Log("Right");
-        usedStages.Add(option3);
-        SpawnNextStage(option3);
     }
 
     public void SpawnNextStage(int option)

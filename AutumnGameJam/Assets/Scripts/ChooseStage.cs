@@ -7,7 +7,7 @@ public class ChooseStage : MonoBehaviour
 {
     public GameObject NextStage;
 
-    public void LeftButtonPressedf()
+    public void LeftButtonPressed()
     {
         NextStage.GetComponent<NextStage>().LeftButtonPressed();
     }
@@ -16,12 +16,6 @@ public class ChooseStage : MonoBehaviour
     {
         NextStage.GetComponent<NextStage>().MiddleButtonPressed();
     }
-
-    public void RightButtonPressed()
-    {
-        NextStage.GetComponent<NextStage>().RightButtonPressed();
-    }
-
     public void PlayButtonPressed()
     {
         SceneManager.LoadScene(1);

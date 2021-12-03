@@ -119,7 +119,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 24, y: 1.5}
+  m_Size: {x: 7, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &6920154712169123156
 MonoBehaviour:
@@ -139,16 +139,16 @@ MonoBehaviour:
   instantiatePosition: {fileID: 6920154711634928094}
   Stages:
   - {fileID: 5595607383280649828, guid: 6bf757dc6f11d2844bebf030f4f37969, type: 3}
-  - {fileID: 5595607383280649828, guid: 6bf757dc6f11d2844bebf030f4f37969, type: 3}
-  - {fileID: 5595607383280649828, guid: 6bf757dc6f11d2844bebf030f4f37969, type: 3}
-  - {fileID: 5595607383280649828, guid: 6bf757dc6f11d2844bebf030f4f37969, type: 3}
-  - {fileID: 5595607383280649828, guid: 6bf757dc6f11d2844bebf030f4f37969, type: 3}
+  - {fileID: 4858971094829100320, guid: 47db3e078ea7e5f4591e6dd39955a0af, type: 3}
+  - {fileID: 3585466017641540345, guid: e96613050ece206469f20c10b6427152, type: 3}
+  - {fileID: 1098914712618534435, guid: c6eb170ac3cb4944293b9324d0e0322f, type: 3}
+  - {fileID: 5673843598185233679, guid: e67ed95debcf09843933f1036a1bd24d, type: 3}
+  StagesImages: []
   mainCamera: {fileID: 0}
   stageNumber: 1
   stageNumberText: {fileID: 0}
   button1: {fileID: 0}
   button2: {fileID: 0}
-  button3: {fileID: 0}
 --- !u!1 &6920154712903126018
 GameObject:
   m_ObjectHideFlags: 0
