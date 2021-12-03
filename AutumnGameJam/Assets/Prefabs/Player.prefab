@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: -9043969918753077257}
   - component: {fileID: 1282781554}
   - component: {fileID: 2368149205197482330}
+  - component: {fileID: 151651348}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -217,6 +218,22 @@ MonoBehaviour:
   animator: {fileID: 1282781554}
   attackCD: 1
   AttackPosition: {fileID: 5973718554745247906}
+--- !u!114 &151651348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2470053592272357471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a26c07c5c8c872a49b1d8f8caa02784d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &2470053592761818694
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,7 +245,7 @@ GameObject:
   - component: {fileID: 2470053592761818693}
   - component: {fileID: 2470053592761818699}
   - component: {fileID: 2470053592761818692}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}

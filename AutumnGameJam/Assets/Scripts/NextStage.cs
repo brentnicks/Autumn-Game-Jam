@@ -24,6 +24,8 @@ public class NextStage : MonoBehaviour
     int option2;
     int option3;
 
+    List<int> usedStages;
+
     private void Start()
     {
         cameraTargetPosition = mainCamera.transform.position;
@@ -42,11 +44,12 @@ public class NextStage : MonoBehaviour
 
             //Choose Next Level
             option1 = Random.Range(0, Stages.Length);
+            while (usedStages.Contains(option1)) option1 = Random.Range(0, Stages.Length);
             option2 = Random.Range(0, Stages.Length);
-            while (option2 == option1) option2 = Random.Range(0, Stages.Length);
+            while (option2 == option1 || usedStages.Contains(option2)) option2 = Random.Range(0, Stages.Length);
             option3 = Random.Range(0, Stages.Length);
-            while (option3 == option1 || option3 == option2) option3 = Random.Range(0, Stages.Length);
-            Debug.Log(option1 + " " + option2 + " " + option3);
+            while (option3 == option1 || option3 == option2 || usedStages.Contains(option3)) option3 = Random.Range(0, Stages.Length);
+            //Debug.Log(option1 + " " + option2 + " " + option3);
             button1.GetComponentInChildren<TextMeshProUGUI>().text = option1.ToString();
             button2.GetComponentInChildren<TextMeshProUGUI>().text = option2.ToString();
             button3.GetComponentInChildren<TextMeshProUGUI>().text = option3.ToString();
@@ -58,4 +61,24 @@ public class NextStage : MonoBehaviour
     {
             mainCamera.transform.position = Vector3.MoveTowards(mainCamera.transform.position, cameraTargetPosition, 6f * Time.deltaTime);
     }
+
+    public void LeftButtonPressed()
+    {
+        Debug.Log("Left");
+        usedStages.Add(option1);
+    }
+
+    public void MiddleButtonPressed()
+    {
+        Debug.Log("Middle");
+        usedStages.Add(option2);
+    }
+
+    public void RightButtonPressed()
+    {
+        Debug.Log("Right");
+        usedStages.Add(option3);
+    }
+
+
 }

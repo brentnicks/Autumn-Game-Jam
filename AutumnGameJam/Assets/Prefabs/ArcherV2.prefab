@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2682576401605975903}
   - component: {fileID: 2682576401605975902}
   - component: {fileID: 2682576401605975899}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ArcherV2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 5731584507761909605, guid: 2a83089ff3a028c41a3449c377612dfe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -132,7 +132,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
