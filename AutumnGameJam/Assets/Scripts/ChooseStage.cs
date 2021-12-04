@@ -19,6 +19,7 @@ public class ChooseStage : MonoBehaviour
     public void PlayButtonPressed()
     {
         SceneManager.LoadScene(1);
+        Time.timeScale = 1;
     }
 
     public void MainMenuButton()

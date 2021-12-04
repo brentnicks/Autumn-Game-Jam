@@ -32,7 +32,7 @@ public class NextStage : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.Equals(player) && stageNumber < 4)
+        if(collision.gameObject.Equals(player) && stageNumber < 3)
         {
             Time.timeScale = 0;
             player.GetComponent<PlayerMovement>().enabled = false;
