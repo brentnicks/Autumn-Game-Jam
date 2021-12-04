@@ -12,7 +12,7 @@ public class NextStage : MonoBehaviour
     public GameObject gm;
     public GameObject instantiatePosition;
     public GameObject[] Stages;
-    public GameObject[] StagesImages;
+    public Sprite[] StagesImages;
     public Camera mainCamera;
     private Vector3 cameraTargetPosition;
     [HideInInspector] public int stageNumber = 1;
@@ -51,8 +51,8 @@ public class NextStage : MonoBehaviour
             option2 = Random.Range(0, Stages.Length);
             while (option2 == option1 || usedStages.Contains(option2)) option2 = Random.Range(0, Stages.Length);
             //Debug.Log(option1 + " " + option2 + " " + option3);
-            button1.GetComponentInChildren<TextMeshProUGUI>().text = option1.ToString();
-            button2.GetComponentInChildren<TextMeshProUGUI>().text = option2.ToString();
+            button1.GetComponent<Image>().sprite = StagesImages[option1];
+            button2.GetComponent<Image>().sprite = StagesImages[option2];
             ChooseUI.SetActive(true);
         }
     }

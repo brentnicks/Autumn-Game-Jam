@@ -7,6 +7,7 @@ public class Boss : MonoBehaviour
     public Animator animator;
     public GameObject projectile;
     public float timeBetweenAttacks;
+    public GameObject EndGameWinUI;
     private int health = 3;
     GameObject player;
     bool isDead = false;
@@ -40,6 +41,7 @@ public class Boss : MonoBehaviour
             StopAllCoroutines();
             animator.Play("Boss_Die");
             isDead = true;
+            EndGameWinUI.SetActive(true);
         }
     }
 

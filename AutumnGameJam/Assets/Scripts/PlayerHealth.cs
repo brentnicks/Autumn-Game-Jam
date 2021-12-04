@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public GameObject EndGameDieUI;
     public List<GameObject> hearts;
 
     public void TakeDamaage()
@@ -27,5 +28,6 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<Animator>().Play("Player_Die");
         yield return new WaitForSeconds(2f);
         Time.timeScale = 0;
+        EndGameDieUI.SetActive(true);
     }
 }

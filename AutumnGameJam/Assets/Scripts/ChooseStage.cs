@@ -20,4 +20,9 @@ public class ChooseStage : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void MainMenuButton()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
