@@ -25,11 +25,6 @@ public class RangedSlash : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             collision.GetComponent<PlayerHealth>().TakeDamaage();
-            Destroy(gameObject);
-        }
-        else if (collision.gameObject.layer == 3)
-        {
-            Destroy(gameObject);
         }
     }
 }

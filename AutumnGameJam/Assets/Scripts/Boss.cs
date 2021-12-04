@@ -41,6 +41,7 @@ public class Boss : MonoBehaviour
             StopAllCoroutines();
             animator.Play("Boss_Die");
             isDead = true;
+            EndGameWinUI = GameObject.Find("GamePlayCanvas").transform.GetChild(3).gameObject;
             EndGameWinUI.SetActive(true);
         }
     }
@@ -50,18 +51,18 @@ public class Boss : MonoBehaviour
         while (isDead == false)
         {
             yield return new WaitForSeconds(timeBetweenAttacks);
-            if (player.transform.position.x > transform.position.x)
+            if (player.transform.position.x >= transform.parent.position.x)
             {
-                transform.parent.rotation *= Quaternion.Euler(0, 0, 0);
-                Debug.Log("right");
+                transform.parent.rotation = Quaternion.Euler(0, 0, 0);
+                Debug.Log(player.transform.position.x > transform.parent.position.x);
             }
-            else
+            else if (player.transform.position.x < transform.parent.position.x)
             {
-                transform.parent.rotation *= Quaternion.Euler(0, 180, 0);
-                Debug.Log("left");
+                transform.parent.rotation = Quaternion.Euler(0, 180, 0);
+                Debug.Log(player.transform.position.x > transform.parent.position.x);
             }
             animator.Play("Boss_Attack");
-            Instantiate(projectile, transform.position, transform.rotation);/*Quaternion.Euler(0f,0f,Vector3.Angle(player.transform.position, transform.right))*/
+            Instantiate(projectile, transform.position, Quaternion.Euler(Vector3.zero));/*Quaternion.Euler(0f,0f,Vector3.Angle(player.transform.position, transform.right))*/
         }
     }
 }

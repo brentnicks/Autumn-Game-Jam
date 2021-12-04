@@ -1099,9 +1099,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Credits:\nBrent Nicks\r & Bowen Lai\r\nMusic by Kovicon\r\nTilemaps by
-    Szadi art \r\nKnight Sprites by RGS Dev\r\nArcher by Rephira\r\nBackground by
-    edermunizz\r"
+  m_Text: "Credits:\nBrent Nicks\r & Bowen Lai\r\nMusic by Kovicon\r\nArcher by Rephira\r\nTilemaps
+    by Szadi art \nKnight Sprites by RGS Dev\r\nBackground by edermunizz\r\nAlso
+    thanks to Eggo"
 --- !u!222 &2003634161
 CanvasRenderer:
   m_ObjectHideFlags: 0

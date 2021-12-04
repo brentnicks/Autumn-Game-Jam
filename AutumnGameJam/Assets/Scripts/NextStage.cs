@@ -17,9 +17,12 @@ public class NextStage : MonoBehaviour
     private Vector3 cameraTargetPosition;
     [HideInInspector] public int stageNumber = 1;
     public GameObject stageNumberText;
+    public GameObject bossStage;
     
     public GameObject button1;
     public GameObject button2;
+
+    bool canSpawnBoss = true;
 
     int option1;
     int option2;
@@ -32,7 +35,7 @@ public class NextStage : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.Equals(player) && stageNumber < 3)
+        if (collision.gameObject.Equals(player) && stageNumber < 4)
         {
             Time.timeScale = 0;
             player.GetComponent<PlayerMovement>().enabled = false;
@@ -54,6 +57,11 @@ public class NextStage : MonoBehaviour
             button1.GetComponent<Image>().sprite = StagesImages[option1];
             button2.GetComponent<Image>().sprite = StagesImages[option2];
             ChooseUI.SetActive(true);
+        }
+        else if (stageNumber > 3 && canSpawnBoss)
+        {
+            Instantiate(bossStage, instantiatePosition.transform.position + new Vector3(0, 100, 0), transform.rotation);
+            canSpawnBoss = false;
         }
     }
 

@@ -73,6 +73,7 @@ MonoBehaviour:
   animator: {fileID: 8018781094842546127}
   projectile: {fileID: 8470217065170698311, guid: 2cbb7408383c2674c859ed5ea7022277, type: 3}
   timeBetweenAttacks: 2
+  EndGameWinUI: {fileID: 0}
 --- !u!1 &2763479014499017773
 GameObject:
   m_ObjectHideFlags: 0
