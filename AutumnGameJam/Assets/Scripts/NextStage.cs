@@ -74,21 +74,25 @@ public class NextStage : MonoBehaviour
     {
         Debug.Log("Left");
         usedStages.Add(option1);
-        SpawnNextStage(option1);
+        StartCoroutine(SpawnNextStage(option1));
+        //SpawnNextStage(option1);
     }
 
     public void MiddleButtonPressed()
     {
         Debug.Log("Middle");
         usedStages.Add(option2);
-        SpawnNextStage(option2);
+        StartCoroutine(SpawnNextStage(option2));
+        //SpawnNextStage(option2);
     }
 
-    public void SpawnNextStage(int option)
+    public IEnumerator SpawnNextStage(int option)
     {
         Instantiate(Stages[option], instantiatePosition.transform.position, transform.rotation);
         ChooseUI.SetActive(false);
         Time.timeScale = 1;
+        player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, player.GetComponent<Rigidbody2D>().velocity.y);
+        yield return new WaitForSeconds(2);
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<PlayerAttack>().enabled = true;
     }

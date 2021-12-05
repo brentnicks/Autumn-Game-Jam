@@ -13,7 +13,7 @@ public class RangedSlash : MonoBehaviour
     {
         player = GameObject.Find("Player");
         Vector2 direction = player.transform.position - transform.position;
-        direction = player.transform.InverseTransformDirection(direction);//new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y);
+        //direction = player.transform.InverseTransformDirection(direction);//new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y);
         angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         rb.velocity = direction.normalized * speed;
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
@@ -25,6 +25,7 @@ public class RangedSlash : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             collision.GetComponent<PlayerHealth>().TakeDamaage();
+            Destroy(gameObject);
         }
     }
 }

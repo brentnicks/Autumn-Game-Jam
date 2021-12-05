@@ -29,5 +29,6 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(2f);
         Time.timeScale = 0;
         EndGameDieUI.SetActive(true);
+        GetComponent<AudioSource>().Stop();
     }
 }

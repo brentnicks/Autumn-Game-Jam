@@ -11,6 +11,7 @@ public class Boss : MonoBehaviour
     private int health = 3;
     GameObject player;
     bool isDead = false;
+    public AudioClip victory;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -43,6 +44,14 @@ public class Boss : MonoBehaviour
             isDead = true;
             EndGameWinUI = GameObject.Find("GamePlayCanvas").transform.GetChild(3).gameObject;
             EndGameWinUI.SetActive(true);
+            player.GetComponent<PlayerAttack>().enabled = false;
+            player.GetComponent<PlayerMovement>().enabled = false;
+            player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
+            player.GetComponent<Animator>().SetFloat("Speed", 0);
+            player.GetComponent<Animator>().SetBool("Jump", false);
+            player.GetComponent<AudioSource>().clip = victory;
+            player.GetComponent<AudioSource>().loop = false;
+            player.GetComponent<AudioSource>().Play();
         }
     }
 

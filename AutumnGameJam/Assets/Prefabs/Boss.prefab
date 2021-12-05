@@ -74,6 +74,7 @@ MonoBehaviour:
   projectile: {fileID: 8470217065170698311, guid: 2cbb7408383c2674c859ed5ea7022277, type: 3}
   timeBetweenAttacks: 2
   EndGameWinUI: {fileID: 0}
+  victory: {fileID: 8300000, guid: c83fc8600c2eef24c90ed196e8128ca1, type: 3}
 --- !u!1 &2763479014499017773
 GameObject:
   m_ObjectHideFlags: 0

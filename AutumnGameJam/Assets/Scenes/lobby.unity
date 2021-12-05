@@ -223,10 +223,58 @@ PrefabInstance:
       propertyPath: m_Name
       value: GamePlayCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1165051965615262933, guid: 65780fa9e1005dc41aa0f073d5a6e55d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165051965615262933, guid: 65780fa9e1005dc41aa0f073d5a6e55d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165051965615262933, guid: 65780fa9e1005dc41aa0f073d5a6e55d, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165051965615262933, guid: 65780fa9e1005dc41aa0f073d5a6e55d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165051965615262933, guid: 65780fa9e1005dc41aa0f073d5a6e55d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 856
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165051965615262933, guid: 65780fa9e1005dc41aa0f073d5a6e55d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 480
+      objectReference: {fileID: 0}
     - target: {fileID: 1165051966413391887, guid: 65780fa9e1005dc41aa0f073d5a6e55d, type: 3}
       propertyPath: NextStage
       value: 
       objectReference: {fileID: 1767085876}
+    - target: {fileID: 1165051966734393028, guid: 65780fa9e1005dc41aa0f073d5a6e55d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165051966734393028, guid: 65780fa9e1005dc41aa0f073d5a6e55d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165051966734393028, guid: 65780fa9e1005dc41aa0f073d5a6e55d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 855
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165051966734393028, guid: 65780fa9e1005dc41aa0f073d5a6e55d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 481
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165051966734393028, guid: 65780fa9e1005dc41aa0f073d5a6e55d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 427.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165051966734393028, guid: 65780fa9e1005dc41aa0f073d5a6e55d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -240.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1165051966846794053, guid: 65780fa9e1005dc41aa0f073d5a6e55d, type: 3}
       propertyPath: NextStage
       value: 
